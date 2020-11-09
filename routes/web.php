@@ -33,16 +33,3 @@ Route::get('/post/{post}', function (Post $post) {
     ]);
 })->name('posts.show');
 
-Route::post('/post/{post}/comment', function (Request $request, Post $post) {
-    $request->validate([
-        'comment' => 'required|min:4'
-    ]);
-
-    Comment::create([
-        'post_id' => $post->id,
-        'username' => 'Guest',
-        'content' => $request->comment,
-    ]);
-
-    return back()->with('success_message', 'Comment was posted!');
-})->name('comment.store');
