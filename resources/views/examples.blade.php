@@ -104,8 +104,6 @@
 
     <hr>
 
-    <hr>
-
     <div class="my-8">
         <h2 class="text-lg font-semibold mt-4">Livewire Blog Posts w/ Comments</h2>
 
@@ -116,4 +114,11 @@
         </ul>
     </div>
 
+    <hr>
+
+    <div class="my-8">
+        <h2 class="text-lg font-semibold mt-4">Polling Example</h2>
+
+        @livewire('polling-example')
+    </div>
 @endsection
