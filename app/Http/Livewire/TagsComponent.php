@@ -21,7 +21,7 @@ class TagsComponent extends Component
 
     public function mount()
     {
-        $this->tags = json_encode(Tag::pluck('name'), true);
+        $this->tags = json_encode(Tag::pluck('name'));
     }
 
     public function tagAdded($tag)
