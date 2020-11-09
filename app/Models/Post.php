@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * Class Post
  * @property integer id
+ * @property string title
+ * @property string content
  *
  * @package App\Models
  */

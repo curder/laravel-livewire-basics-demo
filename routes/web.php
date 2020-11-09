@@ -23,8 +23,12 @@ Route::get('examples', function () {
     return view('examples', [
         'posts' => Post::all(),
     ]);
-});
-Route::get('/post/{post}', function (Post $post) {
+})->name('examples');
+
+Route::get('posts/{post}/edit', function(Post $post) {
+    return view('posts.edit', compact('post'));
+})->name('posts.edit');
+
+Route::get('/posts/{post}', function (Post $post) {
     return view('posts.show', compact('post'));
 })->name('posts.show');
-
