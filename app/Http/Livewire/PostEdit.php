@@ -26,7 +26,7 @@ class PostEdit extends Component
     public $rules = [
         'title' => 'required',
         'content' => 'required',
-        'photo' => 'sometimes|image|max:5000',
+        'photo' => 'nullable|sometimes|image|max:5000',
     ];
 
     public function mount(Post $post)
