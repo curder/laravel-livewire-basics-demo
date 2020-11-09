@@ -125,4 +125,13 @@
 
         @livewire('polling-example')
     </div>
+
+
+    <hr>
+
+    <div class="my-8">
+        <h2 class="text-lg font-semibold mt-4">Events Example with Tags</h2>
+
+        @livewire('tags-component')
+    </div>
 @endsection
