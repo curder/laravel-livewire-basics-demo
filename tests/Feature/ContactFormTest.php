@@ -3,6 +3,7 @@ namespace Tests\Feature;
 
 use App\Http\Livewire\ContactForm;
 use App\Mail\ContactFormMailable;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Livewire;
 use Tests\TestCase;
@@ -14,6 +15,8 @@ use Tests\TestCase;
  */
 class ContactFormTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @test */
     public function examples_page_contains_contract_form_livewire_component()
     {

@@ -17,7 +17,8 @@ use Tests\TestCase;
  */
 class CommentsSectionTest extends TestCase
 {
-    use DatabaseMigrations;
+    use RefreshDatabase;
+
     protected $post;
 
     public function setUp(): void

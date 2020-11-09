@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Http\Livewire\SearchDropdown;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\Livewire;
@@ -10,6 +11,8 @@ use Tests\TestCase;
 
 class SearchDropdownTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @test */
     public function examples_page_contains_search_dropdown_livewire_component()
     {
