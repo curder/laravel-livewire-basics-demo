@@ -16,20 +16,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('examples', function() {
+Route::get('examples', function () {
     return view('examples', [
         'posts' => Post::all(),
     ]);
 });
-
 Route::get('/post/{post}', function (Post $post) {
-    return view('posts.show', [
-        'post' => $post,
-    ]);
+    return view('posts.show', compact('post'));
 })->name('posts.show');
 

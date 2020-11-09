@@ -31,21 +31,21 @@ class CommentsSectionTest extends TestCase
     }
 
     /** @test */
-    public function examples_page_contains_posts()
+    public function examples_page_contains_posts() : void
     {
         $this->get('/examples')
              ->assertSee($this->post->title);
     }
 
     /** @test */
-    public function post_page_contains_comments_livewire_component()
+    public function post_page_contains_comments_livewire_component() : void
     {
         $this->get(route('posts.show', $this->post))
             ->assertSeeLivewire('comments-section');
     }
 
     /** @test */
-    public function valid_comment_can_be_posted()
+    public function valid_comment_can_be_posted() : void
     {
         Livewire::test(CommentsSection::class)
             ->set('post', $this->post)
@@ -56,7 +56,7 @@ class CommentsSectionTest extends TestCase
     }
 
     /** @test */
-    public function comment_is_required()
+    public function comment_is_required() : void
     {
         Livewire::test(CommentsSection::class)
             ->set('post', $this->post)
@@ -66,7 +66,7 @@ class CommentsSectionTest extends TestCase
     }
 
     /** @test */
-    public function comment_requires_min_characters()
+    public function comment_requires_min_characters() : void
     {
         Livewire::test(CommentsSection::class)
                 ->set('post', $this->post)
