@@ -51,8 +51,8 @@ class CommentsSectionTest extends TestCase
             ->set('post', $this->post)
             ->set('comment', 'This is my comment')
             ->call('postComment')
-            ->assertSee('Comment was posted!')
-            ->assertSee('This is my comment');
+            ->assertSee('This is my comment')
+            ->assertSee(__('Comment was posted!'));
     }
 
     /** @test */
@@ -61,8 +61,7 @@ class CommentsSectionTest extends TestCase
         Livewire::test(CommentsSection::class)
             ->set('post', $this->post)
             ->call('postComment')
-            ->assertHasErrors('comment', 'required')
-            ->assertSee('The comment field is required');
+            ->assertHasErrors(['comment' => 'required']);
     }
 
     /** @test */
@@ -72,7 +71,6 @@ class CommentsSectionTest extends TestCase
                 ->set('post', $this->post)
                 ->set('comment', '123')
                 ->call('postComment')
-                ->assertHasErrors('comment', 'min')
-                ->assertSee('The comment must be at least 4 characters.');
+                ->assertHasErrors(['comment' => 'min']);
     }
 }

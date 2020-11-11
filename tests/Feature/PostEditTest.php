@@ -79,7 +79,7 @@ class PostEditTest extends TestCase
                 ->set('content', 'new Content')
                 ->set('photo', $pdf)
                 ->call('submitForm')
-                ->assertSee('The photo must be an image.');
+                ->assertHasErrors(['photo' => 'image']);
 
         $this->post->refresh();
 
